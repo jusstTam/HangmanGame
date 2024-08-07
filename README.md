@@ -1,7 +1,5 @@
 ## Игра "Виселица"(Hangman) на Java
 
-![Static Badge](https://img.shields.io/badge/made%20by-tam-purple)
-
 ### Описание
 
 Это простая реализация классической игры "Виселица" (Hangman) на языке программирования Java в процедурном стиле.
