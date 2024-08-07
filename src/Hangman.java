@@ -65,7 +65,9 @@ public class Hangman {
 
     private static char getUserInput(Scanner scanner) {
         System.out.print("\nВведите предполагаемую букву: ");
-        return scanner.next().toLowerCase().charAt(0);
+        char result = scanner.next().toLowerCase().charAt(0);
+        scanner.nextLine();
+        return result;
     }
 
 
