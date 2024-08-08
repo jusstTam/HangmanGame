@@ -41,11 +41,11 @@ public class Hangman {
                             changeHidingWord(word, hidingWord, userLetter);
                         }
                     } else {
-                        state++;
                         if (isLetterUsed(lettersUsed, userLetter)) {
                             System.out.println("\nЭту букву вы уже использовали!");
                         } else {
                             addUsedLetterInArray(lettersUsed, index, userLetter);
+                            state++;
                             index++;
                         }
                     }
