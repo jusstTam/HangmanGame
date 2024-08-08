@@ -1,10 +1,11 @@
+package main;
+
 import java.util.Scanner;
-import java.util.Random;
 
 public class Hangman {
-    private static final String[] words = {"человек", "работа", "вопрос", "сторона", "страна", "случай", "голова", "ребенок", "система", "отношение", "женщина", "деньги", "машина", "проблема", "решение", "история", "власть", "тысяча", "возможность", "результат", "область", "статья", "компания", "группа", "развитие", "процесс", "условие", "средство", "начало", "уровень", "минута", "качество", "программирование", "тестировщик"};
 
     public static void main(String[] args) {
+        RandomWord randomWord = new RandomWord();
         Scanner scanner = new Scanner(System.in);
         String userInput;
 
@@ -13,14 +14,13 @@ public class Hangman {
             userInput = scanner.nextLine().toLowerCase();
 
             if (userInput.equals("да")) {
-                String word = getRandomWord();
+                String word = randomWord.getRandomWord();
                 int state = 0;
                 int index = 0;
                 int tries = 0;
                 char[] hidingWord = new char[word.length()];
                 char[] lettersUsed = new char[33];
                 char userLetter;
-
 
                 while (true) {
 
@@ -69,13 +69,6 @@ public class Hangman {
         scanner.nextLine();
         return result;
     }
-
-
-    private static String getRandomWord() {
-        Random random = new Random();
-        return words[random.nextInt(words.length)];
-    }
-
 
     private static StringBuilder getHidingWord(String word, char[] hidingWord, int state) {
         if (hidingWord[0] == 0 && state < 1) {
